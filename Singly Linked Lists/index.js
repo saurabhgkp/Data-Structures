@@ -45,17 +45,36 @@ class LinkList {
         return current
 
     }
+
+    shift() {
+        if (!this.head) return undefined
+        let current = this.head
+        this.head = current.next
+        this.length--
+        if (this.length === 0) {
+            this.head = null
+            this.tail = null
+        }
+        // console.log(current)
+        return current
+    }
+
+
 }
 
 let data = new LinkList()
 data.push("saurabh")
 data.push("singh")
 data.push("mca")
-data.pop()
-data.pop()
-data.pop()
-data.pop()
-data.pop()
+data.shift()
+data.shift()
+
+
+// data.pop()
+// data.pop()
+// data.pop()
+// data.pop()
+// data.pop()
 
 
 console.log(data)
