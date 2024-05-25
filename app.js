@@ -52,13 +52,26 @@ class LinkList {
         this.head = current.next
         this.length--
         if (this.length === 0) {
-            this.head = null
             this.tail = null
         }
         // console.log(current)
         return current
     }
+    unshift(val) {
+        let newNode = new Node(val)
+        if (!this.head) {
+            this.head = newNode
+            this.tail = this.head
+        }
+        else {
+            newNode.next = this.head
+            this.head = newNode
+        }
+        this.length++
+        return this
 
+
+    }
 
 }
 
@@ -66,10 +79,10 @@ let data = new LinkList()
 data.push("saurabh")
 data.push("singh")
 data.push("mca")
-data.shift()
-data.shift()
-
-
+data.unshift("ddd")
+// data.shift()
+// data.shift()
+// data.shift()
 // data.pop()
 // data.pop()
 // data.pop()
